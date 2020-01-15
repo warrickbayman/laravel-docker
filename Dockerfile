@@ -30,7 +30,9 @@ RUN apk add --no-cache \
     postgresql-libs \
     rsync \
     zlib-dev \
-    libzip-dev
+    libzip-dev \
+    oniguruma-dev \
+    zip
 
 # Install PECL and PEAR extensions
 RUN pecl install \
@@ -39,8 +41,8 @@ RUN pecl install \
 
 # Install and enable php extensions
 RUN docker-php-ext-enable \
-    imagick \
-RUN docker-php-ext-configure zip --with-libzip
+    imagick
+
 RUN docker-php-ext-install \
     calendar \
     curl \
