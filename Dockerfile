@@ -40,7 +40,6 @@ RUN pecl install \
 # Install and enable php extensions
 RUN docker-php-ext-enable \
     imagick \
-    xdebug
 RUN docker-php-ext-configure zip --with-libzip
 RUN docker-php-ext-install \
     calendar \
